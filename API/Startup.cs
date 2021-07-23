@@ -54,15 +54,11 @@ namespace API
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             // Cross-origin Resources Sharing
             app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
-
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
